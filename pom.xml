@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.sensedia</groupId>
+	<artifactId>custom-java-example</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
+	<name>custom-java-example</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<interceptor-java-spec.version>1801.5.0.0</interceptor-java-spec.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.sensedia</groupId>
+			<artifactId>api-interceptor-java-spec</artifactId>
+			<version>1801.5.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<groupId>com.sensedia</groupId>
+					<artifactId>api-interceptor-java-spec</artifactId>
+					<version>${interceptor-java-spec.version}</version>
+					<packaging>jar</packaging>
+					<file>${basedir}/src/main/resources/api-interceptor-java-spec-${interceptor-java-spec.version}.jar</file>
+					<generatePom>true</generatePom>
+				</configuration>
+				<executions>
+					<execution>
+						<id>install-jar-lib</id>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<phase>install</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>**/*.jar</exclude>
+				</excludes>
+			</resource>
+		</resources>
+	</build>
+
+	<developers>
+		<developer>
+			<name>Claudenir Freitas</name>
+			<email>claudenir.machado@sensedia.com</email>
+			<organization>Sensedia</organization>
+			<organizationUrl>https://sensedia.com</organizationUrl>
+		</developer>
+	</developers>
+
+</project>
