@@ -11,7 +11,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<interceptor-java-spec.version>1801.5.0.0</interceptor-java-spec.version>
+		<interceptor-java-spec.version>1805.1.0.1</interceptor-java-spec.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -19,7 +19,7 @@
 		<dependency>
 			<groupId>com.sensedia</groupId>
 			<artifactId>api-interceptor-java-spec</artifactId>
-			<version>1801.5.0.0</version>
+			<version>${interceptor-java-spec.version}</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
@@ -44,7 +44,7 @@
 						<goals>
 							<goal>install-file</goal>
 						</goals>
-						<phase>install</phase>
+						<phase>validate</phase>
 					</execution>
 				</executions>
 			</plugin>
