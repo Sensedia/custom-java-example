@@ -11,8 +11,14 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<interceptor-java-spec.version>1805.1.0.1</interceptor-java-spec.version>
+		<java.version>1.8</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<interceptor-java-spec.version>1901.2.0.0</interceptor-java-spec.version>
+		<maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -29,7 +35,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-install-plugin</artifactId>
-				<version>2.5.1</version>
+				<version>${maven-install-plugin.version}</version>
 				<configuration>
 					<groupId>com.sensedia</groupId>
 					<artifactId>api-interceptor-java-spec</artifactId>
